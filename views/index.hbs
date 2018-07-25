@@ -1,0 +1,27 @@
+{{#if user}}
+  {{#each posts}}
+    <div class="index-post_user">
+      <img class="navbar-user post-creator" src={{ this.creatorPic }}>
+      <div class="index-post">
+        <div class="index-post_data_top">
+          <p class="post-text">@ {{this.creatorName}} <a href="#">follow</a></p>
+        </div>
+        <img src="{{this.picPath}}" class="post-image">
+        <div class="index-post_data">
+          <p class="post-text">{{this.content}}</p>
+          <a href="/post/comment/{{this._id}}"><i class="far fa-comment"></i></a>
+        </div>
+        {{#each this.comments}}
+        <div class="comment">
+            <p>{{this.content}}</p>
+            <img src="{{this.picPath}}" class="comment-image">
+        </div>
+        {{/each}}   
+      </div>
+      <br/>
+    </div>
+  {{/each}}
+{{else}}
+  <h1>Welcome to Irontumblr</h1>
+  <p><a href="/signup">Signup</a> or <a href="/login">Login</a> to see all the best content.</p>
+{{/if}}

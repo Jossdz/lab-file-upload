@@ -1,0 +1,13 @@
+<div class="container">
+<div class="post">
+    <img src="{{post.picPath}}" class="post-image">
+    <p class="post-text">{{post.content}}</p>
+    {{#each post.comments}}
+    <div class="comment">
+        <p>{{post.content}}</p>
+        <img src="{{post.picPath}}" class="comment-image">
+    </div>
+    {{/each}}
+</div>
+<a href="/posts/{{post._id}}/comment/">Comment</a>
+</div>

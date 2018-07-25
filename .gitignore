@@ -1,0 +1,4 @@
+node_modules
+/uploadas
+prod.js
+package-lock.json
